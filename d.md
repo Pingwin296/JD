@@ -271,3 +271,24 @@ void main(char[][] args){
 }
 
 ```
+
+# OPcall
+```d
+import tango.io.Stdout;
+import tango.math.Math;
+class Sin {
+    double n;
+    double m;
+    this(double n, double m) {
+        this.n = n;
+        this.m = m;
+    }
+    double opCall(double x) {
+        return n * sin(m*x);
+    }
+}
+void main() {
+    auto mySin = new Sin(2, 0.75);
+    Stdout(mySin(3.1415)).newline;
+}
+```
